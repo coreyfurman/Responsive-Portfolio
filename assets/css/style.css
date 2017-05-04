@@ -35,7 +35,7 @@ h2,
 h3 {
   font-family: Georgia, Times, "Times New Roman", serif;
   font-weight: 700;
-  color: #4aaaa5;
+  color: linear-gradient(#232526, #414345);;
 }
 
 h1 {
@@ -69,12 +69,13 @@ h3 {
   height: 90px;
   font-family: Georgia, Times, "Times New Roman", serif;
   font-size: 30px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 90px;
   color: #fff;
   text-align: center;
   text-decoration: none;
-  background: #4aaaa5;
+  background: #232526; /* For browsers that do not support gradients */
+  background: linear-gradient(#232526, #414345); /* Standard syntax */
 }
 
 nav {
@@ -106,7 +107,7 @@ footer {
   color: #ccc;
   text-align: center;
   background: #666;
-  border-top: 8px solid #4aaaa5;
+  border-top: 8px solid #232526;
 }
 
 /* sidebar */
@@ -240,36 +241,83 @@ input[type=submit] {
 
 
 @media screen and (max-width: 980px) {
+#main-container {
+  width: 500px;
+  float: left;
+  margin-left: 50px;
+  clear: both;
+}
 
 nav a:last-child {
-  margin-right: 30px;
+  margin-right: 50px;
+}
+
+#logo {
+  margin-left: 50px;
+}
+
+.sidebar {
+  clear: both;
+  float: left;
 }
 
   }
 
 
-  @media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
+
+#main-container {
+  clear: both;
+  width: 768px;
+  max-width: 88%;
+  float: left;
+  margin-right: 50px;
+  overflow: auto;
+}
+
 nav a:last-child {
-  margin-right: 30px;
+  margin-right: 50px;
+}
+
+#logo {
+  margin-left: 50px;
+}
+.sidebar {
+  clear: both;
+  width: 650px;
+  max-width: 100%;
+  float: left;
+
 }
 
   }
 
 
-  @media screen and (max-width: 640px) {
+@media screen and (max-width: 640px) {
 
-nav a:last-child {
-  margin-right: 30px;
+nav {
+  width: 640px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
 }
   
 #masthead {
+  clear: both;
   position: static;
+  width: 640px;
+  
 }
-.sidebar {
-float: left;
-}
+
 #main-container {
   padding-top: 10px;
 }
+
+#logo {
+  width: 640px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
 
 }
